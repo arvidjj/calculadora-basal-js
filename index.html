@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora Basal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 
 <body>
@@ -15,26 +17,46 @@
             <p class='minititulo'>Completa todos los datos</p>
 
             <div class='inputcontainer'>
-                <input class='inputcustom' type="text" name="peso" id="peso" placeholder='Ingresa el peso' />
+                <input class='inputcustom' type="number" name="peso" id="peso" placeholder='Ingresa el peso' />
                 <span class="unidadmedida">
                     Kg
                 </span>
             </div>
-            <button class='mainbutton'>Calcular</button>
+            <span id="errorspan"></span>
+            <button class='mainbutton' id="calcular">Calcular</button>
 
-            <div style="margin-top: 5px">
+            <div class="constantediv">
+                <p class="constanteText">Constante para Superficie Corporal</p>
+                <div>
+                    <label for="constante1">
+                        <input type="radio" id="constante1" name="constante" value="1500" checked="true"
+                            class="customradio"> 1500
+                    </label>
+                    <label for="constante2">
+                        <input type="radio" id="constante2" name="constante" value="2000" class="customradio"> 2000
+                    </label>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px" class="resultados">
                 <p class='infotext'>
-                    70 cc/hr
+                    Método: <span class="infospan" id="metodoutilizado"></span>
                 </p>
                 <p class='infotext'>
-                    m+m/2 105 cc/hr
+                    Volumen diario: <span class="infospan" id="vdiario"></span>
+                </p>
+                <p class='infotext'>
+                    Mantenimiento por hora: <span class="infospan" id="mporhora"></span>
+                </p>
+                <p class='infotext'>
+                    M+M/2: <span class="infospan" id="mmasmporhora"></span>
                 </p>
             </div>
         </div>
         <div class='card card2'>
             <h1>¿Como se calcula?</h1>
 
-            <ul>
+            <ul class="customlista">
                 <li class='listitem'>
                     De 0kg a 10kg, se calcular 100cc por cada kilo.
                 </li>
@@ -46,6 +68,15 @@
                 </li>
             </ul>
         </div>
+    </div>
+
+    <div style="align-self: flex-end; width: 60vw; text-align: center;">
+        <p  style=" color: lightslategray; margin:0; margin-top:10px">
+        Angel ojeda
+        </p>
+        <p style=" color: lightslategray; margin:0">
+        Programando Paraguay
+        </p>
     </div>
 </body>
 
